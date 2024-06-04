@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Estilos/style-main.css">
+    <link rel="stylesheet" href="../../Estilos/estilo-liu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <link rel="stylesheet" href="{% static 'css/style_main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light with-background-image p-4">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="/mortalkombatweb">
+                        <img src="{% static 'images/logo2.png' %}" width="30" height="30"
+                            class="d-inline-block align-top" alt="">
+                        Mortal Kombat Wiki
+                    </a>
+    
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'mortalweb:index'%}">Home </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'mortalweb:characters'%}">Characters</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'mortalweb:scenarios'%}">Scenarios </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'mortalweb:contact'%}">Contact </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'mortalweb:crear_personajes'%}">Crear Personaje </a>
+                            </li>
+                        </ul>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'accounts:logout'%}"><img src="{% static 'images/logout.svg' %}" class="usuario ml-3" alt="registro" style="width: 40px;"></a>
+                        {% else %}
+                        <a href="{% url 'accounts:login'%}"><img src="{% static 'images/user.svg' %}" class="usuario" alt="user"></a>
+                        <a href="{% url 'accounts:signup'%}"><img src="{% static 'images/register1.svg' %}" class="usuario ml-3" alt="registro" style="width: 40px;"></a>
+                        {% endif %}
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-start">
+            <div class="col-4 m-5">
+                <img src="{% static 'images/mileena.png' %}" alt="" class="imagen_liu ">
+            </div>
+            <div class="col-7 d-flex flex-column align-items-center">
+                <img src="{% static 'images/t-mileena.png' %}" alt="Shao Kahn" class="img-fluid m-5">
+                <p class="protest-revolution-regular text-justify">
+                    Shao (Japanese: シャオ), also known as General Shao but more commonly known as Shao Kahn, is a
+                    character in the Mortal Kombat fighting game series. A powerful tyrant of the Outworld throne, he is
+                    one of the most celebrated villains in not only the fighting game genre, but the video game genre as
+                    a whole. He serves as the main antagonist of the franchise.
+                </p>
+                <img src="{% static 'images/biography.png' %}" alt="biography" class="img-fluid m-5">
+                <p class="protest-revolution-regular text-justify">
+                    Shao Kahn the Konqueror is the former Emperor of Outworld, and has served as the main antagonist for
+                    most of the series. In many respects, he resembles a large Asian warrior, and is well known for his
+                    God-like strength which rivals, if not outright exceeds, that of Raiden and other Godly characters.
+                    He is also known for his extreme callousness, brutality, and ferocity in battle, as well as his
+                    fondness for personal executions, although he has occasionally spared the lives of his subordinates
+                    after proving their worth to him. He has also spared the lives of other victims such as Sindel and
+                    Kitana, raising the latter like his own daughter and treating the former like his own wife. However,
+                    his true power that has served him well and allowed him to rise above the image of a mere warlord is
+                    his high intelligence and profound knowledge of the black arts.
+                </p>
+                <p class="protest-revolution-regular text-justify">
+                    Like his subordinate Shang Tsung, he has the power to consume and manipulate souls at a much more
+                    efficient rate than Shang Tsung. His knowledge of dark arts have made him a powerful and dangerous
+                    kombatant, along with producing some of Outworld's most deadly adversaries, such as Ermac and
+                    Skarlet. It is revealed in Mortal Kombat: Deception that Shao Kahn was an advisor to Outworld as
+                    Raiden was to Earthrealm, which would suggest the possibility of him being a God, as well as being
+                    the former protector of Outworld during Onaga's rule. He would later defeat Blaze in the original
+                    timeline, ascend to God-hood with Blaze's powers, kills Raiden and wins the original Armageddon as
+                    the remaining kombatant in the original timeline.
+                </p>
+                <img src="{% static 'images/best-kombos.png' %}" alt="best-kombos" class="img-fluid m-5">
+
+                <div id="videoCarousel" class="carousel slide" data-interval="false">
+                    <div class="carousel-inner mb-5">
+                        <div class="carousel-item active">
+                            <video src="{% static 'videos/LiuKang1.mp4' %}" width="100%" height="400" autoplay loop
+                                muted></video>
+                        </div>
+
+                        <div class="carousel-item">
+                            <video src="{% static 'videos/LiuKang2.mp4' %}" width="100%" height="400" autoplay loop
+                                muted></video>
+                        </div>
+
+                        <div class="carousel-item">
+                            <video src="{% static 'videos/LiuKang3.mp4' %}" width="100%" height="400" autoplay loop
+                                muted></video>
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer bg-primary-tertiary text-center">
+        <div class="container p-4 pb-0">
+            <section>
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;"
+                    href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #55acee;"
+                    href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #dd4b39;"
+                    href="#!" role="button"><i class="fab fa-google"></i></a>
+
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #ac2bac;"
+                    href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #0082ca;"
+                    href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+                <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #333333;"
+                    href="#!" role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <nav class="breadcrumb bg-transparent d-inline-block">
+                <ol class="breadcrumb bg-transparent">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="../characters.html">Characters</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Liu Kang</li>
+
+                </ol>
+            </nav>
+
+        </div>
+
+        <div class="text-center pb-5">
+
+            © 2024 Mortal Kombat Wiki. Todos los derechos reservados. <br>
+            Las imágenes utilizadas en este sitio están sujetas a derechos de autor y son propiedad de Warner Bros.
+        </div>
+
+
+    </footer>
+    <script>
+        $('#videoCarousel').carousel();
+
+        $('.carousel').carousel('pause');
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
